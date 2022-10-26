@@ -72,7 +72,7 @@ function NS.CoreUI.BuildBars()
         NS.CoreUI.Bar[k].Name:SetShadowColor(0.2, 0.2, 0.2, 0.4)
         NS.CoreUI.Bar[k].Name:SetShadowOffset(1, -1)
         --: Level
-        NS.CoreUI.Bar[k].Level = NS.CoreUI.Bar[k].Level or NS.CoreUI.Bar[k]:CreateFontString(nil, "ARTWORK", GameFontNormal, 2)
+        NS.CoreUI.Bar[k].Level = NS.CoreUI.Bar[k].Level or NS.CoreUI.Bar[k]:CreateFontString(nil, "ARTWORK", "GameFontNormal", 2)
         NS.CoreUI.Bar[k].Level:SetFont(
         SM:Fetch("font", NS.Options.Bars.LevelFont),
             NS.Options.Bars.LevelFontSize,
@@ -86,7 +86,7 @@ function NS.CoreUI.BuildBars()
         NS.CoreUI.Bar[k].Level:SetTextColor(1, 1, 1, 1)
         NS.CoreUI.Bar[k].Level:SetShadowColor(0, 0, 0, 0.5)
         --: Guild
-        NS.CoreUI.Bar[k].Guild = NS.CoreUI.Bar[k].Guild or NS.CoreUI.Bar[k]:CreateFontString(nil, "ARTWORK", GameFontNormal, 2)
+        NS.CoreUI.Bar[k].Guild = NS.CoreUI.Bar[k].Guild or NS.CoreUI.Bar[k]:CreateFontString(nil, "ARTWORK", "GameFontNormal", 2)
         NS.CoreUI.Bar[k].Guild:SetFont(
         SM:Fetch("font", NS.Options.Bars.GuildFont),
             NS.Options.Bars.GuildFontSize,

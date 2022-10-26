@@ -11,6 +11,7 @@ local floor = floor
 local IsControlKeyDown = IsControlKeyDown
 local Round = Round
 local InCombatLockdown = InCombatLockdown
+local CreateColor = CreateColor
 local C_Timer_After = C_Timer.After
 
 --: Core UI Table Init
@@ -168,7 +169,11 @@ local function CoreBarInit()
     --> CoreBar
     do
         weizPVP_CoreBar:RegisterForDrag("LeftButton")
-        weizPVP_CoreBar.BG:SetVertexColor(unpack(NS.Options.Frames.Header.BackgroundColor))
+        weizPVP_CoreBar.BG:SetVertexColor(
+        NS.Options.Frames.Header.BackgroundColor.r,
+            NS.Options.Frames.Header.BackgroundColor.g,
+            NS.Options.Frames.Header.BackgroundColor.b
+        )
         weizPVP_CoreBar:SetHeight(NS.Options.Frames.Header.Height)
         weizPVP_CoreBar:SetFrameLevel(8)
 
@@ -403,16 +408,20 @@ local function CoreBarInit()
 
     -- : Status Highlight
     local highlightColor = "lightGrey"
-    weizPVP_CoreBar.StatusHeader.Highlight.grad:SetGradientAlpha(
+    weizPVP_CoreBar.StatusHeader.Highlight.grad:SetGradient(
     "HORIZONTAL",
-        NS.ColorsLUT[highlightColor].r,
-        NS.ColorsLUT[highlightColor].g,
-        NS.ColorsLUT[highlightColor].b,
-        0,
-        NS.ColorsLUT[highlightColor].r,
-        NS.ColorsLUT[highlightColor].g,
-        NS.ColorsLUT[highlightColor].b,
-        0.4
+        CreateColor(
+            NS.ColorsLUT[highlightColor].r,
+            NS.ColorsLUT[highlightColor].g,
+            NS.ColorsLUT[highlightColor].b,
+            0
+        ),
+        CreateColor(
+            NS.ColorsLUT[highlightColor].r,
+            NS.ColorsLUT[highlightColor].g,
+            NS.ColorsLUT[highlightColor].b,
+            0.4
+       )
     )
 
     weizPVP_CoreBar.StatusHeader.Highlight.grad:ClearAllPoints()
@@ -420,16 +429,20 @@ local function CoreBarInit()
     weizPVP_CoreBar.StatusHeader.Highlight.grad:SetPoint("BOTTOM", weizPVP_CoreBar, "BOTTOM", 0, 1)
     weizPVP_CoreBar.StatusHeader.Highlight.grad:SetPoint("LEFT", weizPVP_CoreBar, "LEFT")
     weizPVP_CoreBar.StatusHeader.Highlight.grad:SetPoint("RIGHT", weizPVP_CoreBar.Separator, "CENTER")
-    weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetGradientAlpha(
+    weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetGradient(
     "HORIZONTAL",
-        NS.ColorsLUT[highlightColor].r,
-        NS.ColorsLUT[highlightColor].g,
-        NS.ColorsLUT[highlightColor].b,
-        0.4,
-        NS.ColorsLUT[highlightColor].r,
-        NS.ColorsLUT[highlightColor].g,
-        NS.ColorsLUT[highlightColor].b,
-        0
+        CreateColor(
+            NS.ColorsLUT[highlightColor].r,
+            NS.ColorsLUT[highlightColor].g,
+            NS.ColorsLUT[highlightColor].b,
+            0.4
+        ),
+        CreateColor(
+            NS.ColorsLUT[highlightColor].r,
+            NS.ColorsLUT[highlightColor].g,
+            NS.ColorsLUT[highlightColor].b,
+            0
+        )
     )
     weizPVP_CoreBar.StatusHeader.Highlight.grad2:ClearAllPoints()
     weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetPoint("TOP", weizPVP_CoreBar, "TOP", 0, -1)
@@ -438,13 +451,14 @@ local function CoreBarInit()
     weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetPoint("RIGHT", weizPVP_CoreBar, "CENTER")
 
     --|> CORE FRAME
-    weizPVP_CoreFrame:SetMinResize(140, NS.Options.Bars.RowHeight + NS.Options.Frames.Header.Height)
-    weizPVP_CoreFrame:SetMaxResize(
-    600,
-        ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) +
-        NS.Options.Frames.Header.Height -
-        1
-    )
+    if weizPVP_CoreFrame.SetResizeBounds then -- WoW 10.0
+        weizPVP_CoreFrame:SetResizeBounds(140, NS.Options.Bars.RowHeight + NS.Options.Frames.Header.Height)
+        weizPVP_CoreFrame:SetResizeBounds(100, 1, 600, ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) + NS.Options.Frames.Header.Height - 1)
+    else
+        weizPVP_CoreFrame:SetMinResize(140, NS.Options.Bars.RowHeight + NS.Options.Frames.Header.Height)
+        weizPVP_CoreFrame:SetMaxResize(600, ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) + NS.Options.Frames.Header.Height - 1)
+    end
+
     weizPVP_CoreFrame:EnableMouse(false)
 
     --> Scroll Frame
@@ -829,7 +843,7 @@ end
 -----------------------------------------------------------
 function NS.CoreUI.FlashTitleBar(color)
     if NS.ColorsLUT[color] then
-        weizPVP_CoreBar.StatusHeader.Highlight.grad:SetGradientAlpha(
+        weizPVP_CoreBar.StatusHeader.Highlight.grad:SetGradient(
         "HORIZONTAL",
             NS.ColorsLUT[color].r,
             NS.ColorsLUT[color].g,
@@ -840,7 +854,7 @@ function NS.CoreUI.FlashTitleBar(color)
             NS.ColorsLUT[color].b,
             0.4
         )
-        weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetGradientAlpha(
+        weizPVP_CoreBar.StatusHeader.Highlight.grad2:SetGradient(
         "HORIZONTAL",
             NS.ColorsLUT[color].r,
             NS.ColorsLUT[color].g,

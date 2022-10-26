@@ -8,7 +8,7 @@
 			<Anchor point="CENTER" />
 		</Anchors>
 		<Frames>
-			<ScrollFrame parentKey="ScrollFrame" enableMouseWheel="true" clipChildren="true">
+			<ScrollFrame parentKey="ScrollFrame" clipChildren="true">
 				<Anchors>
 					<Anchor point="LEFT" relativePoint="LEFT" x="0" y="0" />
 					<Anchor point="RIGHT" relativePoint="RIGHT" x="0" y="0" />
@@ -170,7 +170,7 @@
 				<HighlightTexture file="Interface\Addons\weizPVP\Media\Buttons\expander.tga" alphaMode="ADD" alpha="0.5" />
 				<Animations>
 					<AnimationGroup parentKey="FadeIn">
-						<Alpha fromAlpha="0" toAlpha="1" duration="0" order="1" endDay="0">
+						<Alpha fromAlpha="0" toAlpha="1" duration="0" order="1">
 						</Alpha>
 						<Scripts>
 							<OnFinished>

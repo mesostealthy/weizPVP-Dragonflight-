@@ -5,7 +5,8 @@
 local ADDON_NAME, NS = ...
 
 --: ⬆️ Upvalues :--
-local InterfaceOptionsFrame_OpenToCategory = InterfaceOptionsFrame_OpenToCategory
+local Settings_OpenToCategory = Settings.OpenToCategory
+local SettingsPanel_CategoryList_ScrollBar = SettingsPanel.CategoryList.ScrollBar
 local wipe = wipe
 
 --|> CONFIG FUNCTIONS
@@ -30,13 +31,14 @@ end
 --> TOGGLE OPTIONS
 -----------------------------------------------------------
 function NS.ToggleOptions()
-    if InterfaceOptionsFrame:IsShown() then
-        InterfaceOptionsFrame:Hide()
+    if SettingsPanel:IsShown() then
+        SettingsPanel:Hide()
     else
-        InterfaceOptionsFrame_OpenToCategory(ADDON_NAME) -- open options to ADDON_NAME
-        local _, max = InterfaceOptionsFrameAddOnsListScrollBar:GetMinMaxValues() -- Get scrollbar min/max
-        InterfaceOptionsFrameAddOnsListScrollBar:SetValue(max) -- Set scrollbar to max (top)
-        InterfaceOptionsFrame_OpenToCategory(ADDON_NAME) -- open options again (wow bug workaround)
+        Settings_OpenToCategory(ADDON_NAME) -- open options to ADDON_NAME
+        --TODO: fix below -Meso
+        --local _, max = SettingsPanel_CategoryList_ScrollBar:GetMinMaxValues() -- Get scrollbar min/max
+        --SettingsPanel_CategoryList_ScrollBar:SetValue(max) -- Set scrollbar to max (top)
+        Settings_OpenToCategory(ADDON_NAME) -- open options again (wow bug workaround)
     end
 end
 

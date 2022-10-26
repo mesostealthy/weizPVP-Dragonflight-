@@ -6,6 +6,7 @@ local _, NS = ...
 
 --: ⬆️ Upvalues :--
 local C_Timer_After = C_Timer.After
+local CreateColor = CreateColor
 local PlaySoundFile = PlaySoundFile
 local FlashClientIcon = FlashClientIcon
 
@@ -32,7 +33,7 @@ local function CreateAlertFrame()
     NS.AlertFrame.RightFade:SetPoint("TOPLEFT", NS.AlertFrame, "TOPRIGHT")
     NS.AlertFrame.RightFade:SetPoint("BOTTOMLEFT", NS.AlertFrame, "BOTTOMRIGHT")
     NS.AlertFrame.RightFade:SetColorTexture(0, 0, 0, 1)
-    NS.AlertFrame.RightFade:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0.6, 0, 0, 0, 0)
+    NS.AlertFrame.RightFade:SetGradient("HORIZONTAL", CreateColor(0, 0, 0, 0.6), CreateColor(0, 0, 0, 0))
     NS.AlertFrame.Center = NS.AlertFrame.Center or NS.AlertFrame:CreateTexture(nil, "ARTWORK")
     NS.AlertFrame.Center:SetPoint("TOPLEFT", NS.AlertFrame, "TOPLEFT")
     NS.AlertFrame.Center:SetPoint("BOTTOMRIGHT", NS.AlertFrame, "BOTTOMRIGHT")
@@ -42,7 +43,7 @@ local function CreateAlertFrame()
     NS.AlertFrame.LeftFade:SetPoint("TOPRIGHT", NS.AlertFrame, "TOPLEFT")
     NS.AlertFrame.LeftFade:SetPoint("BOTTOMRIGHT", NS.AlertFrame, "BOTTOMLEFT")
     NS.AlertFrame.LeftFade:SetColorTexture(0, 0, 0, 1)
-    NS.AlertFrame.LeftFade:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0, 0, 0, 0, 0.6)
+    NS.AlertFrame.LeftFade:SetGradient("HORIZONTAL", CreateColor(0, 0, 0, 0), CreateColor(0, 0, 0, 0.6))
     -- playerNameText
     NS.AlertFrame.playerText = NS.AlertFrame.playerText or NS.AlertFrame:CreateFontString(nil, "OVERLAY")
     NS.AlertFrame.playerText:SetPoint("RIGHT", NS.AlertFrame, "RIGHT")
