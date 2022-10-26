@@ -1,0 +1,20 @@
+﻿#- weizPVP ----------------------------------------------------------
+## Interface: 90200
+## Title: weizPVP |TInterface/Addons/weizPVP/Media/toc:16|t
+#--------------------------------------------------------------------
+## Version: v1.9.9.1
+## Author: weiz
+## Notes: World PVP Multi-tool: Detect, analyze, and display enemy players. Target Crosshair, Stealth Alerts, Kill On Sight and more!
+#--------------------------------------------------------------------
+## OptionalDeps: Ace3, LibSharedMedia-3.0, LibDDI-1.0, LibDBIcon-1.0, LibDataBroker-1.1
+## SavedVariables: _weizpvp_globaldb, _weizpvp_global_info
+## SavedVariablesPerCharacter: _weizpvp_chardb
+#--------------------------------------------------------------------
+## DefaultState: enabled
+## LoadOnDemand: 0
+#--------------------------------------------------------------------
+## X-Website: https://www.curseforge.com/wow/addons/weizpvp
+## X-Curse-Project-ID: 300711
+## X-WoWI-ID: 24779
+#--------------------------------------------------------------------
+Load.xml
