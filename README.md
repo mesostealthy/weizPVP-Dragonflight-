@@ -1,8 +1,8 @@
-# weizPVP-Dragonflight-
-# v1.9.9.1 Original
-# This killer addon was created by the great weiz!
-# I hope you are recovering after your accident!
-# I know we are all sending you get well wishes and prayers from S.A.S!
+# weizPVP-Dragonflight- v1.9.9.1 (Original)
+
+This killer addon was created by the great weiz!
+I hope you are recovering after your accident!
+I know we are all sending you get well wishes and prayers from S.A.S!
 
 So for now, I'm just going through this addon and fixing the stuff that
 Blizzard changed in the Dragonflight v10.0.0 prepatch! I can't say that
