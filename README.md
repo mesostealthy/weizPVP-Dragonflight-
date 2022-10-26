@@ -1,4 +1,4 @@
-# weizPVP-Dragonflight- v1.9.9.1 (Original)
+# weizPVP-Dragonflight- v1.9.9.2 (Patched for Dragonflight)
 
 This killer addon was created by the great weiz!
 I hope you are recovering after your accident!
