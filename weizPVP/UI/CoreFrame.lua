@@ -453,7 +453,7 @@ local function CoreBarInit()
     --|> CORE FRAME
     if weizPVP_CoreFrame.SetResizeBounds then -- WoW 10.0
         weizPVP_CoreFrame:SetResizeBounds(140, NS.Options.Bars.RowHeight + NS.Options.Frames.Header.Height)
-        weizPVP_CoreFrame:SetResizeBounds(100, 1, 600, ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) + NS.Options.Frames.Header.Height - 1)
+        weizPVP_CoreFrame:SetResizeBounds(140, 1, 600, ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) + NS.Options.Frames.Header.Height - 1)
     else
         weizPVP_CoreFrame:SetMinResize(140, NS.Options.Bars.RowHeight + NS.Options.Frames.Header.Height)
         weizPVP_CoreFrame:SetMaxResize(600, ((NS.Options.Bars.RowHeight + NS.Options.Bars.VerticalSpacing) * NS.Options.Bars.MaxNumBars) + NS.Options.Frames.Header.Height - 1)
