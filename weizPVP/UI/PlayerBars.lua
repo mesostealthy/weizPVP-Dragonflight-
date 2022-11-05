@@ -167,6 +167,7 @@ function NS.CoreUI.ButtonPreClick(barID, MouseButton)
     if playerName then
         if MouseButton == "LeftButton" then
             if not InCombatLockdown() then
+                NS.CoreUI.Bar[barID].Button:RegisterForClicks("AnyUp", "AnyDown")
                 NS.CoreUI.Bar[barID].Button:SetAttribute("type1", "macro")
                 local target = gsub(playerName, "-" .. NS.PlayerRealm, "")
                 NS.CoreUI.Bar[barID].Button:SetAttribute("macrotext1", "/targetexact " .. target)

@@ -4,6 +4,7 @@
 local ADDON_NAME, NS = ...
 
 --: 🆙 Upvalues :----------------------
+local collectgarbage = collectgarbage
 local GetCVarDefault = GetCVarDefault
 local SecondsToTime = SecondsToTime
 local SetCVar = SetCVar

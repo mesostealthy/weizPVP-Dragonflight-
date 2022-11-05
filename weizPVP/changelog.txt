@@ -1,0 +1,4 @@
+v1.9.9.3:
+- Hopefully the targetting system is fixed for all that click on names now. (Patch provided by bacara3d. Thanks!)
+- Fixed toc X-Website & X-Curse-Project-ID, also removed X-WoWI-ID.
+- Added a test to check for any nearby Spectral Sight's to popup like Stealth notifications.

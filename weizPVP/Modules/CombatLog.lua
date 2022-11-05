@@ -37,6 +37,8 @@ local stealthIDs = {
   [180592] = true, -- Hide
   [6920] = true, -- Hide, rank 2
   [67340] = true, -- Hide, rank 2, again?
+  -- See Stealth
+  [188501] = true, -- Spectral Sight
   -- Malicious
   [341189] = true, -- Malicious (Construct Ability)
   [341194] = true, -- Malicious (Construct Ability)
@@ -55,6 +57,7 @@ local stealthNames = {
   ["Shroud of Concealment"] = true,
   ["Vanish"] = true,
   ["Prowl"] = true,
+  ["Spectral Sight"] = true,
   ["Arantir's Deception"] = true,
   ["Invisibility"] = true,
   ["Stealth Field"] = true,
